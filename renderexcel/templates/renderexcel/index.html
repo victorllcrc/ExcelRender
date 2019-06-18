@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vas a caer chupetin</title>
+</head>
+<body>
+    {% if queryset %}
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>CIUDAD</th>
+                    <th>TELEFONO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for q in queryset %}
+                    <tr>
+                        <td>{{ q.nombre }}</td>
+                        <td>{{ q.apellido }}</td>
+                        <td>{{ q.ciudad }}</td>
+                        <td>{{ q.telefono }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    {% else %}
+        <h1>No hay datos que mosstrar gaaaaa :V</h1>
+    {% endif %}
+    <a href="{% url 'chupetin' %}">report excel</a>
+</body>
+</html>
